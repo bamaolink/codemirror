@@ -1,3 +1,5 @@
 {
-  "oxc.enable": true
+  "oxc.enable": true,
+  "prettier.singleQuote": true,
+  "prettier.semi": false
 }

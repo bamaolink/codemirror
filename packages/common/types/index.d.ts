@@ -1,0 +1,28 @@
+import { langs as chinese } from './langs/chinese';
+import { Compartment } from '@codemirror/state';
+import { markdown } from '@codemirror/lang-markdown';
+import { cpp } from '@codemirror/lang-cpp';
+import { json } from '@codemirror/lang-json';
+import { java } from '@codemirror/lang-java';
+import { vue } from '@codemirror/lang-vue';
+import { html } from '@codemirror/lang-html';
+import { javascript } from '@codemirror/lang-javascript';
+export { chinese };
+export { basicSetup, minimalSetup, EditorView } from './basic';
+export declare const languageConf: Compartment;
+export declare const editableConf: Compartment;
+export declare const themeConf: Compartment;
+export declare const lineWrappingConf: Compartment;
+export declare const langs: {
+    markdown: typeof markdown;
+    cpp: typeof cpp;
+    json: typeof json;
+    java: typeof java;
+    vue: typeof vue;
+    html: typeof html;
+    javascript: typeof javascript;
+};
+export type LangModelType = keyof typeof langs;
+export type ThemeType = 'light' | 'dark';
+export declare const getLangModel: (lang: LangModelType) => import("@codemirror/language").LanguageSupport;
+export declare const getTheme: (theme: ThemeType) => import("@codemirror/state").Extension;
