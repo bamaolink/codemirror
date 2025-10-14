@@ -10,6 +10,7 @@
   "main": "index.js",
   "scripts": {
     "react": "npm run dev --workspace=packages/react",
+    "build-react": "npm run build --workspace=packages/react",
     "vue": "npm run dev --workspace=packages/vue",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -41,7 +42,8 @@
     "@codemirror/search": "^6.5.11",
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.38.5",
-    "@fsegurai/codemirror-theme-bundle": "^6.2.2"
+    "@fsegurai/codemirror-theme-bundle": "^6.2.2",
+    "@bamaolink/codemirror-common": "file:./packages/codemirror-common"
   },
   "homepage": "https://github.com/bamaolink/codemirror#readme",
   "bugs": {

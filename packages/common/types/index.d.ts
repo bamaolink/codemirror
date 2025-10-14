@@ -8,6 +8,7 @@ import { vue } from '@codemirror/lang-vue';
 import { html } from '@codemirror/lang-html';
 import { javascript } from '@codemirror/lang-javascript';
 export { chinese };
+export { themeStyles } from './basic/theme';
 export { basicSetup, minimalSetup, EditorView } from './basic';
 export declare const languageConf: Compartment;
 export declare const editableConf: Compartment;

@@ -21,6 +21,10 @@ export const themeStyles = {
     transform: 'translateY(-4px)',
     display: 'block',
   },
+  '.cm-gutters .cm-gutterElement > span[title~=折叠行]': {
+    transform: 'translateY(-4px)',
+    display: 'block',
+  },
   '.cm-content': {
     fontFamily: 'SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace',
   },
