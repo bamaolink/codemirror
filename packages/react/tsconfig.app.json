@@ -23,8 +23,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    // "baseUrl": ".",
+    // "ignoreDeprecations": "true",
     "paths": {
-      "@/components/*": ["./src/components/*"] // 设置路径别名
+      "@/*": ["./src/*"]
     }
   },
   "include": ["./src"]

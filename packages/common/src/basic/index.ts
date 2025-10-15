@@ -71,7 +71,10 @@ export const basicSetup: Extension = (() => [
   highlightActiveLineGutter(),
   highlightSpecialChars(),
   history(),
-  foldGutter(),
+  foldGutter({
+    openText: '▾',
+    closedText: '▸',
+  }),
   drawSelection(),
   dropCursor(),
   EditorState.allowMultipleSelections.of(true),

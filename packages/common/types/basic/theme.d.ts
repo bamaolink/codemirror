@@ -15,14 +15,6 @@ export declare const themeStyles: {
     '.cm-gutters': {
         fontFamily: string;
     };
-    '.cm-gutters .cm-gutterElement > span[title~=Fold]': {
-        transform: string;
-        display: string;
-    };
-    '.cm-gutters .cm-gutterElement > span[title~=\u6298\u53E0\u884C]': {
-        transform: string;
-        display: string;
-    };
     '.cm-content': {
         fontFamily: string;
     };
