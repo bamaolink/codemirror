@@ -1,18 +1,29 @@
 export const themeStyles = {
   // 隐藏替换
-  '& button[name=replaceAll], & button[name=replace], & button[name=close], & input[name=replace]':
-    {
-      display: 'none',
-    },
-  '.cm-search': {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '4px',
+  // '& button[name=replaceAll], & button[name=replace], & button[name=close], & input[name=replace]':
+  //   {
+  //     display: 'none',
+  //   },
+  '.cm-panel.cm-search': {
+    // display: 'flex',
+    // alignItems: 'center',
+    // gap: '4px',
+    // flexWrap: 'wrap',
   },
-  '.cm-search > label': {
+  '.cm-panel.cm-search > label': {
     display: 'inline-flex',
     alignItems: 'center',
     gap: '4px',
+    lineHeight: '20px',
+    fontSize: '12px',
+    transform: 'translateY(2px)',
+  },
+  '.cm-panel button': {
+    fontSize: '12px',
+  },
+  '.cm-textfield': {
+    fontSize: '12px',
+    borderRadius: '4px',
   },
   '.cm-gutters': {
     fontFamily: 'SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace',

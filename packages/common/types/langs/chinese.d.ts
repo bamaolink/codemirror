@@ -19,6 +19,7 @@ export declare const langs: {
     'by word': string;
     replace: string;
     'replace all': string;
+    regexp: string;
     close: string;
     'current match': string;
     'replaced $ matches': string;

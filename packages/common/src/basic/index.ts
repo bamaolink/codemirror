@@ -19,7 +19,11 @@ import {
   foldKeymap,
 } from '@codemirror/language'
 import { defaultKeymap, history, historyKeymap } from '@codemirror/commands'
-import { searchKeymap, highlightSelectionMatches } from '@codemirror/search'
+import {
+  searchKeymap,
+  highlightSelectionMatches,
+  search,
+} from '@codemirror/search'
 import {
   autocompletion,
   completionKeymap,
@@ -87,6 +91,9 @@ export const basicSetup: Extension = (() => [
   crosshairCursor(),
   highlightActiveLine(),
   highlightSelectionMatches(),
+  search({
+    top: true,
+  }),
   keymap.of([
     ...closeBracketsKeymap,
     ...defaultKeymap,

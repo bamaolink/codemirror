@@ -19,6 +19,7 @@ export const langs = {
   'by word': '单词匹配',
   replace: '替换',
   'replace all': '替换全部',
+  regexp: '正则表达式',
   close: '关闭',
   'current match': '当前匹配',
   'replaced $ matches': '已替换 $ 匹配项',

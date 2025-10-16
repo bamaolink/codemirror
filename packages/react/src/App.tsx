@@ -45,7 +45,7 @@ export default defineConfig([
     <div className="p-4">
       <BaMaoCodeMirror
         value={value}
-        options={options}
+        options={{ ...options }}
         onThemeChange={(theme) => {
           console.log(theme)
         }}

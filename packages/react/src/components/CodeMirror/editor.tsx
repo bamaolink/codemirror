@@ -54,10 +54,12 @@ const Editor: ForwardRefRenderFunction<
   )
   const {
     title,
+    hideHeader = false,
     disabled = false,
     lineWrapping = true,
     width = '100%',
     height = '100%',
+    classNames = [],
   } = options
   const editorRef = useRef<HTMLDivElement>(null)
   const [editor, setEditor] = useState<EditorView | null>(null)
@@ -216,43 +218,47 @@ const Editor: ForwardRefRenderFunction<
 
   return (
     <div
-      className={`bamao-code-mirror outline outline-gray-200 dark:outline-gray-800 overflow-hidden rounded-sm`}
+      className={`bamao-code-mirror outline outline-gray-200 dark:outline-gray-800 overflow-hidden rounded-sm ${classNames.join(
+        ' '
+      )}`}
     >
-      <div className="flex items-center gap-2 p-2 w-full bg-wihte dark:bg-[#1e1e1e] border-b border-gray-200 dark:border-gray-800">
-        <div className="title flex-1 text-sm p-1">{title}</div>
-        <Button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          size="icon-sm"
-          variant="outline"
-        >
-          {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
-        </Button>
-        <Button
-          onClick={() => copyContent()}
-          size="icon-sm"
-          variant="outline"
-          title="copy"
-        >
-          <CopyIcon />
-        </Button>
-        <Select
-          onValueChange={(val) => setLangMode(val as LangModelType)}
-          value={langMode}
-        >
-          <SelectTrigger size="sm">
-            <SelectValue placeholder="请选择" />
-          </SelectTrigger>
-          <SelectContent>
-            {Object.keys(langs).map((lang) => {
-              return (
-                <SelectItem value={lang} key={lang}>
-                  {capitalizeFirstLetter(lang)}
-                </SelectItem>
-              )
-            })}
-          </SelectContent>
-        </Select>
-      </div>
+      {hideHeader ? null : (
+        <div className="flex items-center gap-2 p-2 w-full bg-wihte dark:bg-[#1e1e1e] border-b border-gray-200 dark:border-gray-800">
+          <div className="title flex-1 text-sm p-1">{title}</div>
+          <Button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            size="icon-sm"
+            variant="outline"
+          >
+            {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
+          </Button>
+          <Button
+            onClick={() => copyContent()}
+            size="icon-sm"
+            variant="outline"
+            title="copy"
+          >
+            <CopyIcon />
+          </Button>
+          <Select
+            onValueChange={(val) => setLangMode(val as LangModelType)}
+            value={langMode}
+          >
+            <SelectTrigger size="sm">
+              <SelectValue placeholder="请选择" />
+            </SelectTrigger>
+            <SelectContent>
+              {Object.keys(langs).map((lang) => {
+                return (
+                  <SelectItem value={lang} key={lang}>
+                    {capitalizeFirstLetter(lang)}
+                  </SelectItem>
+                )
+              })}
+            </SelectContent>
+          </Select>
+        </div>
+      )}
       <div className="eidtor" ref={editorRef}></div>
     </div>
   )

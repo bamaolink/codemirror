@@ -81,15 +81,16 @@ export interface BaMaoCodeMirrorProps {
   onThemeChange?: (theme: ThemeType) => void
   options?: {
     title?: React.ReactNode
+    hideHeader?: boolean
     theme?: ThemeType
     disabled?: boolean
     langMode?: LangModelType
     lineWrapping?: boolean
     height?: React.CSSProperties['height']
     width?: React.CSSProperties['width']
+    classNames?: string[]
   }
 }
-
 export interface BaMaoCodeMirrorImperativeHandleType {
   getValue: () => string
   setValue: (value: string) => void
