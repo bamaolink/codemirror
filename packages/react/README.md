@@ -1,17 +1,17 @@
 # @bamaolink/codemirror-react
 
-codemirror 6 react 组件。
+codemirror 6 react component.
 
-## 安装
+## Installation
 
 ```sh
 npm install @bamaolink/codemirror-react
 ```
 
-## 使用
+## Usage
 
 ```tsx
-import { BaMaoCodeMirror } from '@/components/CodeMirror'
+import { BaMaoCodeMirror } from '@bamaolink/codemirror-react'
 
 function App() {
   const [value, setValue] = useState(`console.log("hello world")`)
@@ -37,11 +37,11 @@ function App() {
 }
 ```
 
-### 明暗主题切换
+### Switch Light/Dark Theme
 
 ```tsx
 // root app
-import { ThemeProvider } from '@/components/Theme/Provider'
+import { ThemeProvider } from '@bamaolink/codemirror-react'
 const App = () => {
   return (
     <ThemeProvider
@@ -54,7 +54,7 @@ const App = () => {
 }
 
 // page
-import { useTheme } from '@/components/Theme/Provider'
+import { useTheme } from '@bamaolink/codemirror-react'
 const Page = () => {
   const { theme, setTheme } = useTheme()
   return (
@@ -62,13 +62,13 @@ const Page = () => {
       type="button"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      {theme === 'dark' ? '黑夜' : '白天'}
+      {theme === 'dark' ? 'Dark' : 'Light'}
     </button>
   )
 }
 ```
 
-## 参数
+## Types
 
 ```ts
 export interface BaMaoCodeMirrorProps {
