@@ -45,7 +45,7 @@ import type {
 const Editor: ForwardRefRenderFunction<
   BaMaoCodeMirrorImperativeHandleType,
   BaMaoCodeMirrorProps
-> = ({ value = '', onChange, options = {} }, forwardedRef) => {
+> = ({ value = '', onChange, onThemeChange, options = {} }, forwardedRef) => {
   let isInitialize = false
   const { theme, setTheme } = useTheme()
   // const [theme, setTheme] = useState<ThemeType>(options.theme || 'dark')
@@ -53,6 +53,7 @@ const Editor: ForwardRefRenderFunction<
     options.langMode || 'javascript'
   )
   const {
+    title,
     disabled = false,
     lineWrapping = true,
     width = '100%',
@@ -139,6 +140,7 @@ const Editor: ForwardRefRenderFunction<
       editor.dispatch({
         effects: themeConf.reconfigure(getTheme(theme)),
       })
+      onThemeChange?.(theme)
     }
   }, [theme])
   useEffect(() => {
@@ -204,19 +206,34 @@ const Editor: ForwardRefRenderFunction<
   useImperativeHandle(forwardedRef, () => ({
     setValue,
     getValue,
+    getEditor() {
+      return editor
+    },
+    getEditorRef() {
+      return editorRef.current
+    },
   }))
 
   return (
     <div
       className={`bamao-code-mirror outline outline-gray-200 dark:outline-gray-800 overflow-hidden rounded-sm`}
     >
-      <div className="flex items-center justify-end gap-2 p-2 w-full bg-wihte dark:bg-[#1e1e1e] border-b border-gray-200 dark:border-gray-800">
+      <div className="flex items-center gap-2 p-2 w-full bg-wihte dark:bg-[#1e1e1e] border-b border-gray-200 dark:border-gray-800">
+        <div className="title flex-1 text-sm p-1">{title}</div>
         <Button
           onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           size="icon-sm"
           variant="outline"
         >
           {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
+        </Button>
+        <Button
+          onClick={() => copyContent()}
+          size="icon-sm"
+          variant="outline"
+          title="copy"
+        >
+          <CopyIcon />
         </Button>
         <Select
           onValueChange={(val) => setLangMode(val as LangModelType)}
@@ -235,14 +252,6 @@ const Editor: ForwardRefRenderFunction<
             })}
           </SelectContent>
         </Select>
-        <Button
-          onClick={() => copyContent()}
-          size="icon-sm"
-          variant="outline"
-          title="copy"
-        >
-          <CopyIcon />
-        </Button>
       </div>
       <div className="eidtor" ref={editorRef}></div>
     </div>

@@ -5,4 +5,6 @@ export type {
   BaMaoCodeMirrorImperativeHandleType,
 } from '@/components/CodeMirror/typing'
 
-export default BaMaoCodeMirror
+export { BaMaoCodeMirror }
+
+export { ThemeProvider, useTheme } from '@/components/Theme/Provider'

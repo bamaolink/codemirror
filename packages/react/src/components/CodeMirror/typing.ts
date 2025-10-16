@@ -9,7 +9,9 @@ export interface BaMaoCodeMirrorProps {
     editor: EditorView,
     editorRef: HTMLDivElement
   ) => void
+  onThemeChange?: (theme: ThemeType) => void
   options?: {
+    title?: React.ReactNode
     theme?: ThemeType
     disabled?: boolean
     langMode?: LangModelType
@@ -21,6 +23,8 @@ export interface BaMaoCodeMirrorProps {
 export interface BaMaoCodeMirrorImperativeHandleType {
   getValue: () => string
   setValue: (value: string) => void
+  getEditor: () => EditorView | null
+  getEditorRef: () => HTMLDivElement | null
 }
 
 export type { ThemeType, LangModelType } from '@bamaolink/codemirror-common'

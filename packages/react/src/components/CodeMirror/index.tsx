@@ -16,7 +16,7 @@ import { Toaster } from '@/components/ui/sonner'
 const BaMaoCodeMirror: ForwardRefRenderFunction<
   BaMaoCodeMirrorImperativeHandleType,
   BaMaoCodeMirrorProps
-> = ({ value = '', onChange, options = {} }, forwardedRef) => {
+> = ({ value = '', onChange, onThemeChange, options = {} }, forwardedRef) => {
   const editorRef = useRef<BaMaoCodeMirrorImperativeHandleType>(null)
   useImperativeHandle(forwardedRef, () => ({
     setValue: (value: string) => {
@@ -24,6 +24,12 @@ const BaMaoCodeMirror: ForwardRefRenderFunction<
     },
     getValue: () => {
       return editorRef.current?.getValue() || ''
+    },
+    getEditor: () => {
+      return editorRef.current?.getEditor() || null
+    },
+    getEditorRef: () => {
+      return editorRef.current?.getEditorRef() || null
     },
   }))
   return (
@@ -35,6 +41,7 @@ const BaMaoCodeMirror: ForwardRefRenderFunction<
         options={options}
         value={value}
         onChange={onChange}
+        onThemeChange={onThemeChange}
         ref={editorRef}
       />
       <Toaster position="top-center" />
