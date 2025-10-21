@@ -12,9 +12,11 @@
     "react": "npm run dev --workspace=packages/react",
     "build-react": "npm run build --workspace=packages/react",
     "vue": "npm run dev --workspace=packages/vue",
+    "build-vue": "npm run build --workspace=packages/vue",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@bamaolink/codemirror-common": "file:./packages/codemirror-common",
     "@codemirror/autocomplete": "^6.19.0",
     "@codemirror/commands": "^6.9.0",
     "@codemirror/lang-angular": "^0.1.4",
@@ -42,8 +44,7 @@
     "@codemirror/search": "^6.5.11",
     "@codemirror/state": "^6.5.2",
     "@codemirror/view": "^6.38.5",
-    "@fsegurai/codemirror-theme-bundle": "^6.2.2",
-    "@bamaolink/codemirror-common": "file:./packages/codemirror-common"
+    "@fsegurai/codemirror-theme-bundle": "^6.2.2"
   },
   "homepage": "https://github.com/bamaolink/codemirror#readme",
   "bugs": {
@@ -56,7 +57,10 @@
   "license": "MIT",
   "author": "bamaolink",
   "devDependencies": {
-    "@types/node": "^24.7.2",
+    "@tailwindcss/vite": "^4.1.15",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^24.9.1",
+    "tailwindcss": "^4.1.15",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
