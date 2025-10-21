@@ -54,7 +54,7 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "homepage": "https://github.com/bamaolink/codemirror#readme",
+  "homepage": "https://github.com/bamaolink/codemirror/tree/main/packages/vue#readme",
   "bugs": {
     "url": "https://github.com/bamaolink/codemirror/issues"
   },
