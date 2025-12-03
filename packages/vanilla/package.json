@@ -1,0 +1,52 @@
+{
+  "name": "@bamaolink/codemirror",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "README_zh-CN.md"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/bamao-link-codemirror.js"
+      },
+      "require": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/bamao-link-codemirror-umd.cjs"
+      }
+    }
+  },
+  "main": "./dist/bamao-link-codemirror-umd.cjs",
+  "module": "./dist/bamao-link-codemirror.js",
+  "scripts": {
+    "dev": "vite",
+    "build:types": "tsc --project tsconfig.build.json",
+    "build": "tsc && vite build && npm run build:types",
+    "preview": "vite preview"
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "homepage": "https://github.com/bamaolink/codemirror/tree/main/packages/vanilla#readme",
+  "bugs": {
+    "url": "https://github.com/bamaolink/codemirror/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bamaolink/codemirror.git"
+  },
+  "license": "MIT",
+  "author": "bamaolink",
+  "description": "codemirror 6 for bamaolink",
+  "keywords": [
+    "codemirror",
+    "codemirror 6",
+    "editor"
+  ]
+}
