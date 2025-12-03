@@ -9,6 +9,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "dev": "npm run dev --workspace=packages/vanilla",
+    "build": "npm run build --workspace=packages/vanilla",
     "react": "npm run dev --workspace=packages/react",
     "build-react": "npm run build --workspace=packages/react",
     "vue": "npm run dev --workspace=packages/vue",
@@ -17,8 +19,8 @@
   },
   "dependencies": {
     "@bamaolink/codemirror-common": "file:./packages/codemirror-common",
-    "@codemirror/autocomplete": "^6.19.0",
-    "@codemirror/commands": "^6.9.0",
+    "@codemirror/autocomplete": "^6.20.0",
+    "@codemirror/commands": "^6.10.0",
     "@codemirror/lang-angular": "^0.1.4",
     "@codemirror/lang-cpp": "^6.0.3",
     "@codemirror/lang-css": "^6.3.1",
@@ -29,7 +31,7 @@
     "@codemirror/lang-jinja": "^6.0.0",
     "@codemirror/lang-json": "^6.0.2",
     "@codemirror/lang-liquid": "^6.3.0",
-    "@codemirror/lang-markdown": "^6.4.0",
+    "@codemirror/lang-markdown": "^6.5.0",
     "@codemirror/lang-php": "^6.0.2",
     "@codemirror/lang-python": "^6.2.1",
     "@codemirror/lang-rust": "^6.0.2",
@@ -40,11 +42,13 @@
     "@codemirror/lang-xml": "^6.1.0",
     "@codemirror/lang-yaml": "^6.1.2",
     "@codemirror/language": "^6.11.3",
-    "@codemirror/lint": "^6.9.0",
+    "@codemirror/lint": "^6.9.2",
     "@codemirror/search": "^6.5.11",
     "@codemirror/state": "^6.5.2",
-    "@codemirror/view": "^6.38.5",
-    "@fsegurai/codemirror-theme-bundle": "^6.2.2"
+    "@codemirror/view": "^6.38.8",
+    "@fsegurai/codemirror-theme-vscode-dark": "^6.2.3",
+    "@fsegurai/codemirror-theme-vscode-light": "^6.2.3",
+    "mitt": "^3.0.1"
   },
   "homepage": "https://github.com/bamaolink/codemirror#readme",
   "bugs": {
@@ -57,11 +61,13 @@
   "license": "MIT",
   "author": "bamaolink",
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.15",
-    "@tsconfig/node22": "^22.0.2",
-    "@types/node": "^24.9.1",
-    "tailwindcss": "^4.1.15",
-    "tsx": "^4.20.6",
-    "typescript": "^5.9.3"
+    "@tailwindcss/vite": "^4.1.17",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^24.10.1",
+    "tailwindcss": "^4.1.17",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   }
 }
